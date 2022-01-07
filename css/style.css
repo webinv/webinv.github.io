@@ -1,0 +1,54 @@
+/* */
+.map-overlay:before {
+    background-color: #3e6698 !important;
+}
+
+.margin-bottom {
+    margin-bottom: 50px;
+}
+.article-body-job ul {
+    list-style: circle;
+    padding: 25px;
+}
+
+header .container .text-white {
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.18);
+}
+
+.nav-container ul.menu a {
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.18);
+}
+
+.overlay-bar.nav-sticky .menu a, .nav-container ul.subnav a {
+    text-shadow: none;
+}
+
+.overlay:before {
+    background-color: #3c71e7;
+}
+
+
+.action-banner-more h1 {
+    font-size: 30px;
+    line-height: 56px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.action-banner-more h2 {
+    font-size: 18px;
+    line-height: 44px;
+    margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .menu {
+        top: 30px;
+    }
+    .nav-container ul.menu a {
+        text-shadow: none;
+    }
+    .nav-menu {
+        padding-top: 12px;
+    }
+}
