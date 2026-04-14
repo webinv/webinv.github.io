@@ -1,0 +1,51 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+const isEven = index % 2 === 0;
+---
+
+<section class:list={['py-16 sm:py-20', isEven ? 'bg-white' : 'bg-gray-50']}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <h2 class="font-heading text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+        {project.name}
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">{project.description}</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+      {project.images.map((img) => (
+        <a
+          href={img.src}
+          target="_blank"
+          rel="noopener"
+          class="block overflow-hidden rounded-xl border border-gray-200 hover:shadow-lg transition-all duration-300 group"
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            class="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300"
+            loading="lazy"
+          />
+        </a>
+      ))}
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 justify-center text-sm">
+      <div>
+        <span class="font-semibold text-gray-900">Zakres prac:</span>
+        <span class="text-gray-600 ml-1">{project.scope}</span>
+      </div>
+      <div>
+        <span class="font-semibold text-gray-900">Technologie:</span>
+        <span class="text-gray-600 ml-1">{project.tech}</span>
+      </div>
+    </div>
+  </div>
+</section>

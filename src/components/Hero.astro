@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  large?: boolean;
+}
+
+const { title, subtitle, large = false } = Astro.props;
+---
+
+<section
+  class:list={[
+    'relative flex items-center justify-center text-white overflow-hidden',
+    large ? 'min-h-[70vh]' : 'min-h-[40vh]',
+  ]}
+>
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style="background-image: url('/images/homepage-bg.jpg');"
+  >
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-br from-primary-950/85 to-primary-800/70"></div>
+
+  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+      {title}
+    </h1>
+    {subtitle && (
+      <p class="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
+        {subtitle}
+      </p>
+    )}
+  </div>
+</section>

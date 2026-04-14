@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { services } from '../data/services';
+---
+
+<Layout title="Web Inventions - Strony www, aplikacje, cloud">
+  <Hero
+    title="Web Inventions"
+    subtitle="Tworzymy nowoczesne strony internetowe, aplikacje mobilne i dedykowane rozwiązania dla Twojego biznesu"
+    large
+  />
+
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 sm:mb-16">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Nasza oferta
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Oferujemy kompleksowe usługi w zakresie tworzenia stron internetowych, aplikacji mobilnych oraz rozwiązań chmurowych.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {services.map((service) => (
+          <ServiceCard
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        Zainteresowany?
+      </h2>
+      <p class="text-gray-600 max-w-xl mx-auto mb-8">
+        Skontaktuj się z nami, aby omówić Twój projekt. Chętnie pomożemy w realizacji Twoich pomysłów.
+      </p>
+      <a
+        href="/realizacje"
+        class="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 text-white font-medium rounded-xl hover:bg-primary-700 transition-colors"
+      >
+        Zobacz nasze realizacje
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

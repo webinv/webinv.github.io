@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Raleway', system-ui, sans-serif;
+  --color-primary-50: #eef5ff;
+  --color-primary-100: #d9e8ff;
+  --color-primary-200: #bcd7ff;
+  --color-primary-300: #8ebeff;
+  --color-primary-400: #599bff;
+  --color-primary-500: #3375ff;
+  --color-primary-600: #1b55f5;
+  --color-primary-700: #1440e1;
+  --color-primary-800: #1735b6;
+  --color-primary-900: #19318f;
+  --color-primary-950: #0f1d4e;
+}
