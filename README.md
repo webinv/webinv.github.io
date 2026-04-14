@@ -14,3 +14,16 @@ npm run preview    # Preview production build locally
 ```
 
 Requires Node.js >=22.12.0.
+
+## Deployment
+
+The site is deployed to [GitHub Pages](https://webinv.github.io) via a GitHub Actions workflow (`.github/workflows/pages.yml`).
+
+Deployment is triggered by pushing a version tag:
+
+```sh
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Any tag matching `v*` will start the pipeline, which installs dependencies, builds the site, and deploys the `./dist/` output to GitHub Pages. Deployments can also be triggered manually via `workflow_dispatch` in the Actions tab.
